@@ -6,6 +6,8 @@ const mongodb = require('mongodb');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
+//including the file 
+const auth = require('./Views/Auth');
 const app = express();
 
 dotenv.config();
@@ -26,6 +28,9 @@ mongoose.connect(`${process.env.DATABASE}`, () =>
 {
     console.log("DataBase Connected SuccessFully");
 })
+
+//requiring the routes
+app.use('/v1/test', auth);
 
 
 
