@@ -22,7 +22,10 @@ app.use(bodyParser.json());
 
 
 //connection of the database
-
+mongoose.connect(`${process.env.DATABASE}`, () =>
+{
+    console.log("DataBase Connected SuccessFully");
+})
 
 
 
